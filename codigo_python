@@ -1,0 +1,21 @@
+# Función para comprobar si un número es primo
+def es_primo(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Lista para almacenar los primeros 10 números primos
+primos = []
+n = 2  # Empezamos desde el número 2
+
+# Encontramos los primeros 10 números primos
+while len(primos) < 10:
+    if es_primo(n):
+        primos.append(n)
+    n += 1
+
+# Mostrar los primeros 10 números primos
+print("Los 10 primeros números primos son:", primos)
